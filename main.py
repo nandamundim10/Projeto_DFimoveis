@@ -99,8 +99,13 @@ def get_db():
 
 
 
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 import traceback
+
+@app.get("/")
+def root():
+    """Redireciona a raiz do site para a página visual de Documentação da API"""
+    return RedirectResponse(url="/docs")
 
 @app.get("/imoveis", response_model=list[ImovelSchema])
 def listar_imoveis(db: Session = Depends(get_db)):
