@@ -1,0 +1,114 @@
+{
+  "info": {
+    "name": "API DF Imóveis",
+    "description": "Rotas para cadastro e consulta da modelagem do DF Imóveis.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Cadastrar Tipo Imóvel",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome_tipo_imovel\": \"Apartamento\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/tipo-imovel",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["tipo-imovel"]
+        }
+      }
+    },
+    {
+      "name": "2. Cadastrar Tipo Operação",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome_operacao\": \"Venda\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/tipo-operacao",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["tipo-operacao"]
+        }
+      }
+    },
+    {
+      "name": "3. Cadastrar Imobiliária",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"creci\": \"12345-DF\",\n  \"nome_imobiliaria\": \"DF Imóveis Prime\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/imobiliaria",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["imobiliaria"]
+        }
+      }
+    },
+    {
+      "name": "4. Cadastrar Imóvel Real",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"endereco\": \"SQN 102 Bloco A, Plano Piloto\",\n  \"preco\": 1200000.0,\n  \"tamanho_m2\": 85.5,\n  \"quartos\": 3,\n  \"vagas\": 2,\n  \"suites\": 1,\n  \"imobiliaria_id\": 1,\n  \"tipo_operacao_id\": 1,\n  \"tipo_imovel_id\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/imoveis",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["imoveis"]
+        }
+      }
+    },
+    {
+      "name": "5. Listar Imóveis (Consulta)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/imoveis",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["imoveis"]
+        }
+      }
+    }
+  ]
+}
